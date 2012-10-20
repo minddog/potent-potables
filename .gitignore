@@ -1,0 +1,13 @@
+*.log
+*.pyc
+*.egg-info
+cover
+.coverage
+testlog.xml
+coverage.xml
+build
+dist
+.#*
+.idea
+.DS_Store
+.noseids
