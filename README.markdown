@@ -8,6 +8,12 @@ buzz in through different mediums using a REST API request or Mobile web UI /qui
 Potent Potables brings the promise of a quiz-show application that anyone can setup and use. 
 Multiple games can run in parallel, if you are to run this on a server. 
 
+## Question Management
+Questions are crowd-sourced from folks and can be added to the compilation via pull requests.  
+
+## Host Console
+An interface to manage the show from.  Try not to face any contestants when used.
+
 ## Requirements
 * python 2.7.x
 * a linux or mac server
