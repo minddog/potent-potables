@@ -21,6 +21,24 @@ def get_python_bin_dir():
 def shell(cmdline):
     return subprocess.Popen(cmdline, shell=True).wait()
 
+class CreateDatabaseCommand(Command):
+    """
+    Sets up all database tables
+    """
+    description = "set up database tables"
+    def initialize_options(self): pass
+    def finalize_options(self): pass
+    user_options = []
+
+    def run(self):
+        try:
+            import sqlalchemy.exc
+            from potables.db import create_all
+            create_all()
+        except sqlalchemy.exc.OperationalError, e:
+            print "Make sure you have a database created and your db.xml configured properly."
+            print "Error: {}".format(e.message)
+
 class UnitTestCommand(Command):
     """
     Run tests with nose
@@ -41,7 +59,7 @@ setup(name='potent-potables',
       packages = find_packages('src'),
       package_dir = {'': 'src'},
       include_package_data = True,
-      cmdclass={'unit': UnitTestCommand,},
+      cmdclass={'unit': UnitTestCommand, "db":CreateDatabaseCommand},
       #entry_points={
       #    'console_scripts':
       #      ['potent-processor = potent.processors.usage_triggers:main'],

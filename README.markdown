@@ -14,6 +14,25 @@ Questions are crowd-sourced from folks and can be added to the compilation via p
 ## Host Console
 An interface to manage the show from.  Try not to face any contestants when used.
 
+## Installing
+
+Clone the repo and setup a virtual environment
+> git clone https://github.com/adam/potent-potables.git
+> cd potent-potables
+> mkvirtualenv potables
+> pip install -r requirements.txt
+
+Install the application
+> python setup.py install
+
+Configure the database
+> vim db.xml
+> mysql -u<user> -e 'CREATE DATABASE gameshow';
+> python setup.py db
+
+Run the server
+> python scripts/runserver.py
+
 ## Requirements
 * python 2.7.x
 * a linux or mac server
