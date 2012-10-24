@@ -18,8 +18,11 @@ An interface to manage the show from.  Try not to face any contestants when used
 
 Clone the repo and setup a virtual environment
 > git clone https://github.com/adam/potent-potables.git
+
 > cd potent-potables
+
 > mkvirtualenv potables
+
 > pip install -r requirements.txt
 
 Install the application
@@ -27,7 +30,9 @@ Install the application
 
 Configure the database
 > vim db.xml
+
 > mysql -u<user> -e 'CREATE DATABASE gameshow';
+
 > python setup.py db
 
 Run the server
